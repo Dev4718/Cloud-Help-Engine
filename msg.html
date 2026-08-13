@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Help.CloudEngine - Chat</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Icons -->
+</head>
+<body>
+    <!-- Vertical Navbar -->
+    <div class="vertical-nav">
+        <a href="index.html" data-title="Home">
+            <img src="home-icon.png" alt="Home">
+        </a>
+        <a href="https://cdn.botpress.cloud/webchat/v2/shareable.html?botId=a29f7421-d634-49f4-a614-7eac8a1875c3" data-title="Chatbot" target="_blank">
+            <img src="chatbot-icon.png" alt="Chatbot">
+        </a>
+        <a href="info.html" data-title="Info">
+            <img src="info-icon.png" alt="Info">
+        </a>
+        <a href="jobs.html" data-title="Jobs">
+            <img src="jobs-icon.png" alt="Jobs">
+        </a>
+        <a href="msg.html" data-title="Message">
+            <img src="msg.png" alt="Message">
+        </a>
+    </div>
+
+    <!-- Horizontal Navbar -->
+    <div class="horizontal-nav">
+        <div class="logo">
+            <a href="index.html" data-title="Home">
+                <img src="Logo.png" alt="Help.CloudEngine Logo">
+            </a>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search">
+            <img src="search-icon.png" alt="Search Icon"> <!-- Search icon -->
+            <span class="search-tooltip">Search</span> <!-- Tooltip element -->
+        </div>
+        <div class="login-register">
+            <a href="#">Login</a> | <a href="#">Register</a>
+        </div>
+    </div>
+    
+    <div class="chat-container"></div>
+        <div class="chat-header">
+            <h2>Chat</h2>
+        </div>
+        <div class="chat-box" id="chat-box">
+            <!-- Messages will appear here -->
+        </div>
+        <div class="chat-input">
+            <input type="text" id="chat-message" placeholder="Type a message...">
+            <div class="chat-actions">
+                <button class="emoji-btn"><i class="far fa-smile"></i></button>
+
+                <input type="file" id="file-upload" class="file-upload" hidden>
+                <button class="file-btn"><i class="fas fa-paperclip"></i></button>
+
+                <input type="file" id="media-upload" accept="image/*,video/*" hidden>
+                <button class="media-btn"><i class="fas fa-camera"></i></button>
+
+                <button class="voice-record-btn"><i class="fas fa-microphone"></i></button>
+
+                <button class="send-btn" id="send-btn"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const socket = io(); 
+
+        // Send a message
+        document.getElementById('send-btn').addEventListener('click', () => {
+            const message = document.getElementById('chat-message').value;
+            socket.emit('chat message', message); 
+            document.getElementById('chat-message').value = ''; 
+        });
+
+        // Receive messages from the server
+        socket.on('chat message', (msg) => {
+            const chatBox = document.getElementById('chat-box');
+            const newMessage = document.createElement('div');
+            newMessage.classList.add('message', 'received');
+            newMessage.innerHTML = `<p>${msg}</p>`;
+            chatBox.appendChild(newMessage);
+        });
+
+        // Trigger file upload
+        document.querySelector('.file-btn').addEventListener('click', () => {
+            document.getElementById('file-upload').click();
+        });
+
+        // Trigger media upload
+        document.querySelector('.media-btn').addEventListener('click', () => {
+            document.getElementById('media-upload').click();
+        });
+
+        
+        document.querySelector('.voice-record-btn').addEventListener('click', () => {
+            alert('Voice recording feature is under construction.');
+        });
+
+        
+    </script>
+
+    
+</body>
+</html>
