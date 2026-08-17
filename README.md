@@ -79,44 +79,6 @@ A Node.js server is included through `server.js` to support the application's se
 
 ---
 
-## 📂 Project Structure
-
-```text
-Cloud-Help-Engine/
-│
-├── index.html
-├── chatbot.html
-├── info.html
-├── jobs.html
-├── msg.html
-│
-├── server.js
-├── styles.css
-│
-├── README.md
-│
-├── Logo.png
-├── Background.jpg
-├── background2.jpg
-├── profile.png
-├── msg.png
-│
-├── home-icon.png
-├── about-icon.png
-├── chatbot-icon.png
-├── info-icon.png
-├── jobs-icon.png
-├── search-icon.png
-│
-├── image1.png
-├── image2.png
-├── image3.png
-├── image3.webp
-└── image4.jpg
-```
-
----
-
 ## 🔄 How It Works
 
 The application follows a simple web-based architecture:
@@ -243,7 +205,7 @@ The Cloud Help Engine can be further enhanced with several advanced capabilities
 
 ---
 
-## 🎓 Learning Outcomes
+##  Learning Outcomes
 
 Developing Cloud Help Engine provides practical experience in:
 
@@ -260,7 +222,7 @@ Developing Cloud Help Engine provides practical experience in:
 
 ---
 
-## 🏁 Conclusion
+## Conclusion
 
 **Cloud Help Engine** demonstrates how fundamental web technologies can be combined to create an organized and interactive platform for accessing cloud-related information and assistance.
 
