@@ -172,19 +172,23 @@ Screenshots of the application's main interfaces can be added here to provide a 
 
 ### Home Page
 
-*Add your home page screenshot here.*
+<img width="1885" height="975" alt="image" src="https://github.com/user-attachments/assets/414e7d09-0bdd-4c02-bb3b-1e0278836a26" />
+
 
 ### Chatbot
 
-*Add your chatbot screenshot here.*
+<img width="1902" height="976" alt="image" src="https://github.com/user-attachments/assets/eec9ff95-0aad-4a88-8eae-9de1b01abeda" />
+
 
 ### Information Section
 
-*Add your information page screenshot here.*
+<img width="1912" height="973" alt="image" src="https://github.com/user-attachments/assets/bca3d290-d457-4757-a73b-a4fda474a528" />
+
 
 ### Jobs Section
 
-*Add your jobs page screenshot here.*
+<img width="1919" height="976" alt="image" src="https://github.com/user-attachments/assets/62be2990-10ea-4679-be64-7273f2dac6fb" />
+
 
 ---
 
