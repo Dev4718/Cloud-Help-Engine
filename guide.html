@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f3f7fb">
+    <title>Cloud guides | Help.CloudEngine</title>
+    <script src="theme.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="info-page">
+    <svg class="guide-icon-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+        <symbol id="category-foundations" viewBox="0 0 24 24">
+            <path d="M7.25 18h9.5a4.25 4.25 0 0 0 .35-8.48 5.75 5.75 0 0 0-11.13-.78A4.7 4.7 0 0 0 7.25 18Z" />
+        </symbol>
+        <symbol id="category-architecture" viewBox="0 0 24 24">
+            <path d="m12 3 9 5-9 5-9-5 9-5Z" />
+            <path d="m3 12 9 5 9-5" />
+            <path d="m3 16 9 5 9-5" />
+        </symbol>
+        <symbol id="category-security" viewBox="0 0 24 24">
+            <path d="M12 3 19 6v5c0 4.8-3 8-7 10-4-2-7-5.2-7-10V6l7-3Z" />
+            <path d="m9 12 2 2 4-4" />
+        </symbol>
+        <symbol id="category-operations" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="3.5" />
+            <path d="M12 2.75v2.1M12 19.15v2.1M21.25 12h-2.1M4.85 12h-2.1M18.54 5.46l-1.49 1.49M6.95 17.05l-1.49 1.49m13.08 0-1.49-1.49M6.95 6.95 5.46 5.46" />
+        </symbol>
+    </svg>
+    <nav class="vertical-nav" aria-label="Main navigation">
+        <a href="index.html" data-title="Home" aria-label="Home"><img src="home-icon.png" alt=""></a>
+        <a href="https://cdn.botpress.cloud/webchat/v2/shareable.html?botId=a29f7421-d634-49f4-a614-7eac8a1875c3" data-title="Ask the assistant" aria-label="Ask the assistant" target="_blank" rel="noopener noreferrer"><img src="chatbot-icon.png" alt=""></a>
+        <a href="guide.html" data-title="Guides" aria-label="Guides" aria-current="page"><img src="info-icon.png" alt=""></a>
+        <a href="jobs.html" data-title="Jobs" aria-label="Jobs"><img src="jobs-icon.png" alt=""></a>
+        <a href="msg.html" data-title="Messages" aria-label="Messages"><img src="msg.png" alt=""></a>
+    </nav>
+
+    <header class="horizontal-nav">
+        <div class="logo">
+            <a href="index.html" aria-label="Help.CloudEngine home"><img src="Logo.png" alt="Help.CloudEngine"></a>
+        </div>
+        <label class="search-bar" for="guide-search">
+            <span class="search-symbol" aria-hidden="true"></span>
+            <input type="search" id="guide-search" placeholder="Search cloud guides" autocomplete="off">
+            <kbd>/</kbd>
+        </label>
+        <div class="login-register"><span>10 field guides · 4 topics</span></div>
+    </header>
+
+    <main class="main-content guide-main">
+        <section class="guide-hero" aria-labelledby="page-title">
+            <div class="hero-copy">
+                <p class="eyebrow"><span></span> THE CLOUD FIELD GUIDE</p>
+                <h1 id="page-title">Big ideas.<br><em>Clear skies.</em></h1>
+                <p class="hero-description">A clear, practical guide to cloud computing: how it works, what the services do, and how to build, secure, and run cloud systems.</p>
+                <button class="continue-button" id="continue-button" type="button"><span>Continue where you left off</span><span aria-hidden="true">&#8594;</span></button>
+            </div>
+            <aside class="hero-note" aria-label="Learning path overview">
+                <div class="note-topline"><span class="signal-dot"></span> YOUR LEARNING PATH</div>
+                <button class="path-step" type="button" data-step="1" aria-label="Filter to step 1 guides, Learn the foundations">
+                    <span class="path-step-number">01</span><span class="path-step-title">Learn the foundations</span><span class="path-step-progress">0/3</span>
+                </button>
+                <button class="path-step" type="button" data-step="2" aria-label="Filter to step 2 guides, Explore services and design">
+                    <span class="path-step-number">02</span><span class="path-step-title">Explore services and design</span><span class="path-step-progress">0/4</span>
+                </button>
+                <button class="path-step" type="button" data-step="3" aria-label="Filter to step 3 guides, Secure and operate">
+                    <span class="path-step-number">03</span><span class="path-step-title">Secure and operate</span><span class="path-step-progress">0/3</span>
+                </button>
+                <div class="note-footer"><span>10 short field notes</span><span>~ 40 min total</span></div>
+            </aside>
+        </section>
+
+        <section class="guide-library" id="guide-library" aria-labelledby="library-title">
+            <div class="library-heading">
+                <div>
+                    <p class="eyebrow">THE LIBRARY</p>
+                    <h2 id="library-title">Find your footing</h2>
+                </div>
+                <button class="surprise-button" id="surprise-button" type="button"><span aria-hidden="true">&#10022;</span> Surprise me</button>
+            </div>
+
+            <div class="guide-progress">
+                <div class="progress-copy"><span id="progress-label">0 of 10 completed</span><span id="progress-percent">0%</span></div>
+                <div class="progress-track" id="progress-track" role="progressbar" aria-label="Guide completion" aria-valuemin="0" aria-valuemax="10" aria-valuenow="0"><span id="progress-fill"></span></div>
+            </div>
+
+            <div class="filter-row" role="group" aria-label="Filter guides by topic">
+                <button class="filter-button is-active" type="button" data-filter="all" aria-pressed="true">Everything <span class="filter-count">10</span></button>
+                <button class="filter-button" type="button" data-filter="foundations" aria-pressed="false">Foundations <span class="filter-count">3</span></button>
+                <button class="filter-button" type="button" data-filter="architecture" aria-pressed="false">Architecture <span class="filter-count">4</span></button>
+                <button class="filter-button" type="button" data-filter="security" aria-pressed="false">Security <span class="filter-count">1</span></button>
+                <button class="filter-button" type="button" data-filter="operations" aria-pressed="false">Operations <span class="filter-count">2</span></button>
+                <button class="filter-button" type="button" data-filter="saved" aria-pressed="false">Saved <span class="filter-count">0</span></button>
+                <label class="sort-control" for="guide-sort"><span>Sort</span><select id="guide-sort"><option value="recommended">Recommended</option><option value="shortest">Shortest first</option><option value="newest">Newest</option></select></label>
+                <p class="result-count" id="result-count" aria-live="polite">10 guides</p>
+            </div>
+
+            <div class="guide-grid" id="guide-grid">
+                <article class="guide-card" data-guide-id="cloud-basics" data-number="1" data-minutes="3" data-path-step="1" data-category="foundations" data-search="cloud computing basics definition servers storage internet on demand">
+                    <div class="guide-meta"><span class="guide-number">01</span><span>FOUNDATIONS</span><button class="completion-toggle" type="button" aria-pressed="false"><span class="completion-check" aria-hidden="true">&#10003;</span><span class="completion-label">Mark complete</span></button><span>3 MIN</span><span class="difficulty-badge difficulty-beginner">Beginner</span><button class="bookmark-toggle" type="button" aria-pressed="false" aria-label="Save guide for later" title="Save for later"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.75 3.75h10.5v16.5L12 16.5l-5.25 3.75z" /></svg></button></div>
+                    <h3>So, what is the cloud?</h3>
+                    <p>Understand what happens behind the scenes when you use an app, save a file, or launch a server.</p>
+                    <details><summary>Open field note <span aria-hidden="true">&#8599;</span></summary><div class="guide-detail"><p>Cloud computing is on-demand access to computing resources over the internet. Instead of buying and maintaining your own hardware, you rent what you need from a provider and scale it as demand changes.</p><p class="try-next"><strong>Try this:</strong> Name one app you use that stores or processes your data in the cloud.</p></div></details>
+                </article>
+
+                <article class="guide-card" data-guide-id="service-models" data-number="2" data-minutes="4" data-path-step="1" data-category="foundations" data-search="iaas paas saas service models infrastructure platform software responsibility">
+                    <div class="guide-meta"><span class="guide-number">02</span><span>FOUNDATIONS</span><button class="completion-toggle" type="button" aria-pressed="false"><span class="completion-check" aria-hidden="true">&#10003;</span><span class="completion-label">Mark complete</span></button><span>4 MIN</span><span class="difficulty-badge difficulty-beginner">Beginner</span><button class="bookmark-toggle" type="button" aria-pressed="false" aria-label="Save guide for later" title="Save for later"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.75 3.75h10.5v16.5L12 16.5l-5.25 3.75z" /></svg></button></div>
+                    <h3>IaaS, PaaS, SaaS</h3>
+                    <p>Three service models, one useful question: how much of the stack do you want to manage?</p>
+                    <details><summary>Open field note <span aria-hidden="true">&#8599;</span></summary><div class="guide-detail"><p>IaaS rents building blocks like virtual machines. PaaS adds a managed environment for deploying apps. SaaS gives you a finished application. As you move from IaaS to SaaS, the provider manages more of the underlying stack.</p><p class="try-next"><strong>Try this:</strong> Sort email hosting, a virtual machine, and a managed app platform into these three models.</p></div></details>
+                </article>
+
+                <article class="guide-card" data-guide-id="deployment-models" data-number="3" data-minutes="4" data-path-step="1" data-category="foundations" data-search="public private hybrid multi cloud deployment models environment">
+                    <div class="guide-meta"><span class="guide-number">03</span><span>FOUNDATIONS</span><button class="completion-toggle" type="button" aria-pressed="false"><span class="completion-check" aria-hidden="true">&#10003;</span><span class="completion-label">Mark complete</span></button><span>4 MIN</span><span class="difficulty-badge difficulty-beginner">Beginner</span><button class="bookmark-toggle" type="button" aria-pressed="false" aria-label="Save guide for later" title="Save for later"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.75 3.75h10.5v16.5L12 16.5l-5.25 3.75z" /></svg></button></div>
+                    <h3>Public, private, and hybrid cloud</h3>
+                    <p>Learn the main deployment approaches and why organizations sometimes combine them.</p>
+                    <details><summary>Open field note <span aria-hidden="true">&#8599;</span></summary><div class="guide-detail"><p>Public cloud resources are delivered by a provider over shared infrastructure. A private cloud is dedicated to one organization. Hybrid cloud connects cloud environments with private infrastructure; multi-cloud uses services from more than one provider.</p><p class="try-next"><strong>Try this:</strong> Consider which data, compliance, or existing-system requirements might influence a deployment choice.</p></div></details>
+                </article>
+
+                <article class="guide-card" data-guide-id="cloud-providers" data-number="4" data-minutes="4" data-path-step="2" data-category="architecture" data-search="aws azure google cloud providers compare regions services use case">
+                    <div class="guide-meta"><span class="guide-number">04</span><span>ARCHITECTURE</span><button class="completion-toggle" type="button" aria-pressed="false"><span class="completion-check" aria-hidden="true">&#10003;</span><span class="completion-label">Mark complete</span></button><span>4 MIN</span><span class="difficulty-badge difficulty-intermediate">Intermediate</span><button class="bookmark-toggle" type="button" aria-pressed="false" aria-label="Save guide for later" title="Save for later"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.75 3.75h10.5v16.5L12 16.5l-5.25 3.75z" /></svg></button></div>
+                    <h3>Choosing a cloud provider</h3>
+                    <p>A grounded way to compare AWS, Microsoft Azure, and Google Cloud beyond the brand names.</p>
+                    <details><summary>Open field note <span aria-hidden="true">&#8599;</span></summary><div class="guide-detail"><p>All three offer global infrastructure and broad service catalogs. Compare the services your workload actually needs, your team's existing skills, regional availability, support, and the total cost of a realistic design.</p><p class="try-next"><strong>Try this:</strong> Pick a workload and write down its must-haves before comparing providers.</p></div></details>
+                </article>
+
+                <article class="guide-card" data-guide-id="regions-networks-resilience" data-number="5" data-minutes="4" data-path-step="2" data-category="architecture" data-search="regions availability zones resilience disaster recovery latency data location networking">
+                    <div class="guide-meta"><span class="guide-number">05</span><span>ARCHITECTURE</span><button class="completion-toggle" type="button" aria-pressed="false"><span class="completion-check" aria-hidden="true">&#10003;</span><span class="completion-label">Mark complete</span></button><span>4 MIN</span><span class="difficulty-badge difficulty-intermediate">Intermediate</span><button class="bookmark-toggle" type="button" aria-pressed="false" aria-label="Save guide for later" title="Save for later"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.75 3.75h10.5v16.5L12 16.5l-5.25 3.75z" /></svg></button></div>
+                    <h3>Regions, networks, and resilience</h3>
+                    <p>See how cloud locations and virtual networks connect applications and help keep them available.</p>
+                    <details><summary>Open field note <span aria-hidden="true">&#8599;</span></summary><div class="guide-detail"><p>A region is a geographic area; availability zones are isolated locations within it. Virtual networks let you define how cloud resources communicate. Using multiple zones can reduce the impact of a single-zone outage, while multi-region designs can address larger disruptions and latency.</p><p class="try-next"><strong>Try this:</strong> Trace how a user request reaches an application and its data store.</p></div></details>
+                </article>
+
+                <article class="guide-card" data-guide-id="compute-storage-databases" data-number="6" data-minutes="5" data-path-step="2" data-category="architecture" data-search="compute storage databases virtual machines object storage cloud services">
+                    <div class="guide-meta"><span class="guide-number">06</span><span>ARCHITECTURE</span><button class="completion-toggle" type="button" aria-pressed="false"><span class="completion-check" aria-hidden="true">&#10003;</span><span class="completion-label">Mark complete</span></button><span>5 MIN</span><span class="difficulty-badge difficulty-intermediate">Intermediate</span><button class="bookmark-toggle" type="button" aria-pressed="false" aria-label="Save guide for later" title="Save for later"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.75 3.75h10.5v16.5L12 16.5l-5.25 3.75z" /></svg></button></div>
+                    <h3>Compute, storage, and databases</h3>
+                    <p>Get familiar with the building blocks behind most cloud applications and when each is useful.</p>
+                    <details><summary>Open field note <span aria-hidden="true">&#8599;</span></summary><div class="guide-detail"><p>Compute runs application code on virtual machines, containers, or serverless functions. Object storage holds files and backups; block storage attaches disks to machines. Relational databases organize structured records, while NoSQL databases support other data models and access patterns.</p><p class="try-next"><strong>Try this:</strong> Match an image archive, a web server, and a customer order table to suitable cloud services.</p></div></details>
+                </article>
+
+                <article class="guide-card" data-guide-id="containers-serverless" data-number="7" data-minutes="4" data-path-step="2" data-category="architecture" data-search="containers kubernetes docker portable applications orchestration deployment">
+                    <div class="guide-meta"><span class="guide-number">07</span><span>ARCHITECTURE</span><button class="completion-toggle" type="button" aria-pressed="false"><span class="completion-check" aria-hidden="true">&#10003;</span><span class="completion-label">Mark complete</span></button><span>4 MIN</span><span class="difficulty-badge difficulty-intermediate">Intermediate</span><button class="bookmark-toggle" type="button" aria-pressed="false" aria-label="Save guide for later" title="Save for later"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.75 3.75h10.5v16.5L12 16.5l-5.25 3.75z" /></svg></button></div>
+                    <h3>Containers and serverless</h3>
+                    <p>Compare two ways to package and run applications without managing every server directly.</p>
+                    <details><summary>Open field note <span aria-hidden="true">&#8599;</span></summary><div class="guide-detail"><p>A container packages an application with its dependencies so it behaves consistently across environments. Serverless services run code or applications without requiring you to manage the underlying servers, though you still configure and monitor the service. Kubernetes orchestrates containers at scale and is not necessary for every app.</p><p class="try-next"><strong>Try this:</strong> Compare the operational control you need with the amount of infrastructure you want to manage.</p></div></details>
+                </article>
+
+                <article class="guide-card" data-guide-id="cloud-security" data-number="8" data-minutes="5" data-path-step="3" data-category="security" data-search="security identity access management iam encryption shared responsibility permissions cloud">
+                    <div class="guide-meta"><span class="guide-number">08</span><span>SECURITY</span><button class="completion-toggle" type="button" aria-pressed="false"><span class="completion-check" aria-hidden="true">&#10003;</span><span class="completion-label">Mark complete</span></button><span>5 MIN</span><span class="difficulty-badge difficulty-intermediate">Intermediate</span><button class="bookmark-toggle" type="button" aria-pressed="false" aria-label="Save guide for later" title="Save for later"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.75 3.75h10.5v16.5L12 16.5l-5.25 3.75z" /></svg></button></div>
+                    <h3>Cloud security and shared responsibility</h3>
+                    <p>Understand what providers secure, what you still own, and how access should be granted.</p>
+                    <details><summary>Open field note <span aria-hidden="true">&#8599;</span></summary><div class="guide-detail"><p>Providers secure the underlying cloud infrastructure, while customers remain responsible for their data, identities, access settings, and workloads. The exact split depends on the service. Use identity and access management to give each person or application only the permissions it needs, and protect data with encryption and backups.</p><p class="try-next"><strong>Try this:</strong> Review who can access a test project and remove permissions that are not needed.</p></div></details>
+                </article>
+
+                <article class="guide-card" data-guide-id="monitoring-backups-recovery" data-number="9" data-minutes="4" data-path-step="3" data-category="operations" data-search="reliability backup disaster recovery monitoring observability incidents recovery objectives">
+                    <div class="guide-meta"><span class="guide-number">09</span><span>OPERATIONS</span><button class="completion-toggle" type="button" aria-pressed="false"><span class="completion-check" aria-hidden="true">&#10003;</span><span class="completion-label">Mark complete</span></button><span>4 MIN</span><span class="difficulty-badge difficulty-intermediate">Intermediate</span><button class="bookmark-toggle" type="button" aria-pressed="false" aria-label="Save guide for later" title="Save for later"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.75 3.75h10.5v16.5L12 16.5l-5.25 3.75z" /></svg></button></div>
+                    <h3>Monitoring, backups, and recovery</h3>
+                    <p>Plan how to spot problems, restore important data, and recover from service interruptions.</p>
+                    <details><summary>Open field note <span aria-hidden="true">&#8599;</span></summary><div class="guide-detail"><p>Monitoring tracks signals such as availability, latency, and errors so teams can investigate issues. Backups create recoverable copies of data; disaster recovery describes how services are restored after a major disruption. Test restores regularly because an untested backup may not meet recovery needs.</p><p class="try-next"><strong>Try this:</strong> Decide how much data loss and downtime a simple project could tolerate.</p></div></details>
+                </article>
+
+                <article class="guide-card" data-guide-id="cloud-costs" data-number="10" data-minutes="3" data-path-step="3" data-category="operations" data-search="cost budgets monitor cloud spending billing alerts optimization operations">
+                    <div class="guide-meta"><span class="guide-number">10</span><span>OPERATIONS</span><button class="completion-toggle" type="button" aria-pressed="false"><span class="completion-check" aria-hidden="true">&#10003;</span><span class="completion-label">Mark complete</span></button><span>3 MIN</span><span class="difficulty-badge difficulty-beginner">Beginner</span><button class="bookmark-toggle" type="button" aria-pressed="false" aria-label="Save guide for later" title="Save for later"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.75 3.75h10.5v16.5L12 16.5l-5.25 3.75z" /></svg></button></div>
+                    <h3>Keep cloud costs in view</h3>
+                    <p>Build a few sensible habits for visibility before your first bill becomes a surprise.</p>
+                    <details><summary>Open field note <span aria-hidden="true">&#8599;</span></summary><div class="guide-detail"><p>Tag resources by owner or project, set budget alerts, review usage regularly, and remove resources you no longer need. Budgets notify you about spend; they do not automatically cap it, so pair alerts with clear ownership.</p><p class="try-next"><strong>Try this:</strong> Set a small test budget and an alert before experimenting with paid services.</p></div></details>
+                </article>
+                <div class="coming-soon-card" id="coming-soon-card" aria-hidden="true">
+                    <span class="coming-soon-mark" aria-hidden="true">+</span>
+                    <span>More guides coming soon</span>
+                </div>
+            </div>
+            <p class="empty-state" id="empty-state" hidden>No guides match these filters. Save a guide or try another topic.</p>
+        </section>
+
+        <footer class="guide-footer"><span>HELP.CLOUDENGINE</span><span>Keep asking better questions.</span><a href="index.html">Back to home &#8599;</a></footer>
+    </main>
+
+    <dialog class="guide-reader" id="guide-reader" aria-labelledby="reader-title">
+        <div class="reader-scroll" id="reader-scroll">
+            <div class="reader-progress" id="reader-progress" role="progressbar" aria-label="Guide reading progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span id="reader-progress-fill"></span></div>
+            <header class="reader-header">
+                <div>
+                    <p class="eyebrow" id="reader-category"></p>
+                    <h1 id="reader-title"></h1>
+                    <p id="reader-summary"></p>
+                </div>
+                <button class="reader-close" id="reader-close" type="button" aria-label="Close guide">Close</button>
+            </header>
+            <div class="reader-layout">
+                <nav class="reader-toc" aria-label="On this page">
+                    <p>ON THIS PAGE</p>
+                    <a href="#reader-overview">Overview</a>
+                    <a href="#reader-models">Service models</a>
+                    <a href="#reader-practice">Practice notes</a>
+                    <a href="#reader-example">Configuration example</a>
+                    <a href="#reader-glossary">Glossary</a>
+                    <a href="#reader-quiz">Knowledge check</a>
+                </nav>
+                <article class="reader-article">
+                    <section id="reader-overview" class="reader-section">
+                        <h2>Overview</h2>
+                        <div id="reader-body"></div>
+                        <aside class="reader-callout callout-note"><strong>Note</strong><p>Cloud concepts connect: service models describe who manages each layer, while regions and availability zones describe where services run.</p></aside>
+                    </section>
+                    <section id="reader-models" class="reader-section">
+                        <h2>IaaS, PaaS, and SaaS</h2>
+                        <p>As you move from IaaS to SaaS, the provider manages more of the application stack.</p>
+                        <div class="service-model-scroll">
+                            <table class="service-model-table">
+                                <thead><tr><th scope="col">Layer</th><th scope="col">IaaS</th><th scope="col">PaaS</th><th scope="col">SaaS</th></tr></thead>
+                                <tbody>
+                                    <tr><th scope="row">Application</th><td><span class="ownership-user">You manage</span></td><td><span class="ownership-user">You manage</span></td><td><span class="ownership-provider">Provider manages</span></td></tr>
+                                    <tr><th scope="row">Data</th><td><span class="ownership-user">You manage</span></td><td><span class="ownership-user">You manage</span></td><td><span class="ownership-provider">Provider manages</span></td></tr>
+                                    <tr><th scope="row">Runtime</th><td><span class="ownership-user">You manage</span></td><td><span class="ownership-provider">Provider manages</span></td><td><span class="ownership-provider">Provider manages</span></td></tr>
+                                    <tr><th scope="row">Operating system</th><td><span class="ownership-user">You manage</span></td><td><span class="ownership-provider">Provider manages</span></td><td><span class="ownership-provider">Provider manages</span></td></tr>
+                                    <tr><th scope="row">Infrastructure</th><td><span class="ownership-provider">Provider manages</span></td><td><span class="ownership-provider">Provider manages</span></td><td><span class="ownership-provider">Provider manages</span></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                    <section id="reader-practice" class="reader-section">
+                        <h2>Practice notes</h2>
+                        <aside class="reader-callout callout-tip"><strong>Tip</strong><p>Start with the workload and the responsibilities your team wants to own; then compare cloud services.</p></aside>
+                        <aside class="reader-callout callout-warning"><strong>Warning</strong><p>Budget notifications warn about spending; they do not automatically stop resources or cap a bill.</p></aside>
+                        <aside class="reader-callout callout-try"><strong>Try this</strong><p id="reader-try-this"></p></aside>
+                    </section>
+                    <section id="reader-example" class="reader-section">
+                        <h2>Configuration example</h2>
+                        <div class="reader-code-block">
+                            <div class="reader-code-header"><span>Environment settings</span><button id="copy-example" type="button">Copy</button></div>
+                            <pre><code id="reader-code"></code></pre>
+                        </div>
+                        <p class="copy-status" id="copy-status" aria-live="polite"></p>
+                    </section>
+                    <section id="reader-glossary" class="reader-section">
+                        <h2>Glossary</h2>
+                        <div class="reader-glossary" id="reader-glossary-terms"></div>
+                    </section>
+                    <section id="reader-quiz" class="reader-section">
+                        <h2>Knowledge check</h2>
+                        <p id="quiz-progress"></p>
+                        <div id="reader-quiz-questions"></div>
+                        <p id="quiz-completion" aria-live="polite"></p>
+                    </section>
+                    <nav class="reader-next-up" aria-label="Continue reading"><span>Next up</span><a id="reader-next-link" href="#">Next guide &#8594;</a></nav>
+                </article>
+            </div>
+        </div>
+    </dialog>
+
+    <script type="text/plain" id="legacy-guide-script">
+        const progressStorageKey = 'cloudHelpEngine.completedGuides';
+        const bookmarkStorageKey = 'cloudHelpEngine.savedGuides';
+        const searchInput = document.getElementById('guide-search');
+        const guideGrid = document.getElementById('guide-grid');
+        const sortSelect = document.getElementById('guide-sort');
+        const filterButtons = [...document.querySelectorAll('.filter-button')];
+        const guideCards = [...document.querySelectorAll('.guide-card')];
+        const completionButtons = [...document.querySelectorAll('.completion-toggle')];
+        const bookmarkButtons = [...document.querySelectorAll('.bookmark-toggle')];
+        const resultCount = document.getElementById('result-count');
+        const emptyState = document.getElementById('empty-state');
+        const progressLabel = document.getElementById('progress-label');
+        const progressPercent = document.getElementById('progress-percent');
+        const comingSoonCard = document.getElementById('coming-soon-card');
+        const progressTrack = document.getElementById('progress-track');
+        const progressFill = document.getElementById('progress-fill');
+        const continueButton = document.getElementById('continue-button');
+                const pathStep = activeFilter.startsWith('step-') ? activeFilter.slice(5) : null;
+                const matchesTopic = activeFilter === 'all'
+                    || activeFilter === 'saved'
+                    || card.dataset.category === activeFilter
+                    || card.dataset.pathStep === pathStep;
+        let completedGuideIds = new Set();
+        let savedGuideIds = new Set();
+        const currentGuideIds = new Set(guideCards.map((card) => card.dataset.guideId));
+
+        try {
+            const storedCompletionIds = JSON.parse(localStorage.getItem(progressStorageKey) || '[]');
+            comingSoonCard.hidden = activeFilter !== 'all' || query.length > 0;
+            if (Array.isArray(storedCompletionIds)) {
+                completedGuideIds = new Set(storedCompletionIds.filter((id) => currentGuideIds.has(id)));
+            }
+        } catch (error) {
+            completedGuideIds = new Set();
+            updatePathProgress();
+        }
+
+        function updatePathProgress() {
+            pathStepButtons.forEach((button) => {
+                const step = button.dataset.step;
+                const stepCards = guideCards.filter((card) => card.dataset.pathStep === step);
+                const completedCount = stepCards.filter((card) => completedGuideIds.has(card.dataset.guideId)).length;
+
+                button.querySelector('.path-step-progress').textContent = `${completedCount}/${stepCards.length}`;
+                button.setAttribute('aria-label', `${completedCount} of ${stepCards.length} completed. Filter to step ${step}: ${button.querySelector('.path-step-title').textContent}`);
+            });
+        }
+
+        try {
+            const storedBookmarks = JSON.parse(localStorage.getItem(bookmarkStorageKey) || '[]');
+            if (Array.isArray(storedBookmarks)) {
+
+        function setGuideNoteOpen(card, isOpen) {
+            const detail = card.querySelector('.guide-detail');
+            const button = card.querySelector('.field-note-toggle');
+
+            detail.hidden = !isOpen;
+            button.setAttribute('aria-expanded', String(isOpen));
+            button.querySelector('.field-note-label').textContent = isOpen ? 'Close field note' : 'Open field note';
+        }
+
+        function prepareGuideCardFooters() {
+            guideCards.forEach((card) => {
+                const metadata = card.querySelector('.guide-meta');
+                const number = metadata.querySelector('.guide-number');
+                const category = metadata.querySelector('.category-label');
+                const readTime = [...metadata.children].find((element) => element.tagName === 'SPAN'
+                    && element !== number
+                    && element !== category
+                    && !element.classList.contains('difficulty-badge'));
+                const difficulty = metadata.querySelector('.difficulty-badge');
+                const bookmark = metadata.querySelector('.bookmark-toggle');
+                const completion = metadata.querySelector('.completion-toggle');
+                const detail = card.querySelector('.guide-detail');
+                const details = card.querySelector('details');
+                const footer = document.createElement('footer');
+                const noteToggle = document.createElement('button');
+                const noteLabel = document.createElement('span');
+                const noteArrow = document.createElement('span');
+                const actions = document.createElement('div');
+
+                readTime.classList.add('guide-read-time');
+                readTime.textContent = readTime.textContent.toLowerCase();
+                metadata.replaceChildren(number, category, readTime, difficulty);
+
+                detail.id = `${card.dataset.guideId}-field-note`;
+                detail.hidden = true;
+                details.remove();
+
+                noteToggle.className = 'field-note-toggle';
+                noteToggle.type = 'button';
+                noteToggle.setAttribute('aria-expanded', 'false');
+                noteToggle.setAttribute('aria-controls', detail.id);
+                noteLabel.className = 'field-note-label';
+                noteLabel.textContent = 'Open field note';
+                noteArrow.className = 'field-note-arrow';
+                noteArrow.setAttribute('aria-hidden', 'true');
+                noteArrow.textContent = '\u2192';
+                noteToggle.append(noteLabel, noteArrow);
+                noteToggle.addEventListener('click', () => setGuideNoteOpen(card, detail.hidden));
+
+                actions.className = 'guide-card-actions';
+                actions.append(bookmark, completion);
+                footer.className = 'guide-card-footer';
+                footer.append(noteToggle, actions);
+                card.append(detail, footer);
+            });
+        }
+                savedGuideIds = new Set(storedBookmarks.filter((id) => currentGuideIds.has(id)));
+            }
+            sortedCards.forEach((card) => guideGrid.insertBefore(card, comingSoonCard));
+            savedGuideIds = new Set();
+        }
+
+        function updateGuides() {
+            const query = searchInput.value.trim().toLowerCase();
+                    if (nextCard) setGuideNoteOpen(nextCard, true);
+            guideCards.forEach((card) => {
+                const matchesTopic = activeFilter === 'all' || activeFilter === 'saved' || card.dataset.category === activeFilter;
+                const matchesSaved = activeFilter !== 'saved' || savedGuideIds.has(card.dataset.guideId);
+        prepareGuideCardFooters();
+                const matchesSearch = !query || card.textContent.toLowerCase().includes(query) || card.dataset.search.includes(query);
+                card.hidden = !(matchesTopic && matchesSaved && matchesSearch);
+                if (!card.hidden) visibleCount += 1;
+            });
+
+                pathStepButtons.forEach((stepButton) => stepButton.classList.remove('is-active'));
+            resultCount.textContent = `${visibleCount} ${visibleCount === 1 ? 'guide' : 'guides'}`;
+            emptyState.hidden = visibleCount !== 0;
+        }
+
+        function updateCompletionCard(card) {
+            const completed = completedGuideIds.has(card.dataset.guideId);
+            const button = card.querySelector('.completion-toggle');
+            button.classList.toggle('is-complete', completed);
+            button.setAttribute('aria-pressed', String(completed));
+            button.setAttribute('aria-label', `${completed ? 'Mark incomplete' : 'Mark complete'}: ${card.querySelector('h3').textContent}`);
+            button.querySelector('.completion-label').textContent = completed ? 'Completed' : 'Mark complete';
+        }
+
+            setGuideNoteOpen(chosen, true);
+            const completedCount = guideCards.filter((card) => completedGuideIds.has(card.dataset.guideId)).length;
+            const totalCount = guideCards.length;
+            const percent = totalCount ? Math.round((completedCount / totalCount) * 100) : 0;
+
+            setGuideNoteOpen(nextCard, true);
+            progressTrack.setAttribute('aria-valuemax', String(totalCount));
+            progressTrack.setAttribute('aria-valuenow', String(completedCount));
+            progressFill.style.width = `${percent}%`;
+        }
+
+        function saveProgress() {
+            try {
+                localStorage.setItem(progressStorageKey, JSON.stringify([...completedGuideIds]));
+            } catch (error) {
+                // Keep this session interactive when browser storage is unavailable.
+            }
+        }
+
+        function updateBookmarkCard(card) {
+            const isSaved = savedGuideIds.has(card.dataset.guideId);
+            const button = card.querySelector('.bookmark-toggle');
+            const title = card.querySelector('h3').textContent;
+            const label = isSaved ? `Remove bookmark: ${title}` : `Save for later: ${title}`;
+
+            card.classList.toggle('is-saved', isSaved);
+            button.classList.toggle('is-saved', isSaved);
+            button.setAttribute('aria-pressed', String(isSaved));
+            button.setAttribute('aria-label', label);
+            button.title = label;
+        }
+
+        function saveBookmarks() {
+            try {
+                localStorage.setItem(bookmarkStorageKey, JSON.stringify([...savedGuideIds]));
+            } catch (error) {
+                // Keep this session interactive when browser storage is unavailable.
+            }
+        }
+
+        function updateFilterCounts() {
+            filterButtons.forEach((button) => {
+                const countElement = button.querySelector('.filter-count');
+                if (!countElement) return;
+
+                const filter = button.dataset.filter;
+                const count = filter === 'all'
+                    ? guideCards.length
+                    : filter === 'saved'
+                        ? savedGuideIds.size
+                        : guideCards.filter((card) => card.dataset.category === filter).length;
+                countElement.textContent = String(count);
+            });
+        }
+
+        function sortGuideCards() {
+            const mode = sortSelect.value;
+            const sortedCards = [...guideCards].sort((first, second) => {
+                const numberOrder = Number(first.dataset.number) - Number(second.dataset.number);
+
+                if (mode === 'shortest') {
+                    return Number(first.dataset.minutes) - Number(second.dataset.minutes) || numberOrder;
+                }
+                if (mode === 'newest') {
+                    return -numberOrder;
+                }
+
+                return Number(first.dataset.pathStep) - Number(second.dataset.pathStep) || numberOrder;
+            });
+
+            sortedCards.forEach((card) => guideGrid.appendChild(card));
+        }
+
+        function addNextUpSuggestions() {
+            guideCards.forEach((card, index) => {
+                card.id = card.dataset.guideId;
+                const nextCard = guideCards[index + 1];
+                const suggestion = document.createElement('div');
+                const label = document.createElement('span');
+                const link = document.createElement('a');
+
+                suggestion.className = 'next-up';
+                label.className = 'next-up-label';
+                label.textContent = 'NEXT UP';
+                link.href = nextCard ? `#${nextCard.id}` : '#guide-library';
+                link.textContent = nextCard
+                    ? nextCard.querySelector('h3').textContent
+                    : 'Choose another topic from the library';
+                link.addEventListener('click', () => {
+                    const nextDetails = nextCard && nextCard.querySelector('details');
+                    if (nextDetails) nextDetails.open = true;
+                });
+
+                suggestion.append(label, link);
+                card.querySelector('.guide-detail').appendChild(suggestion);
+            });
+        }
+
+        function addCategoryIcons() {
+            const svgNamespace = 'http://www.w3.org/2000/svg';
+            const categories = new Set(guideCards.map((card) => card.dataset.category));
+            const categoryTargets = [
+                ...guideCards.map((card) => ({
+                    element: card.querySelector('.guide-meta > span:nth-child(2)'),
+                    category: card.dataset.category,
+                    isCardLabel: true
+                })),
+                ...filterButtons
+                    .filter((button) => categories.has(button.dataset.filter))
+                    .map((button) => ({ element: button, category: button.dataset.filter }))
+            ];
+
+            categoryTargets.forEach(({ element, category, isCardLabel }) => {
+                const icon = document.createElementNS(svgNamespace, 'svg');
+                const use = document.createElementNS(svgNamespace, 'use');
+
+                icon.setAttribute('class', 'category-icon');
+                icon.setAttribute('viewBox', '0 0 24 24');
+                icon.setAttribute('aria-hidden', 'true');
+                icon.setAttribute('focusable', 'false');
+                use.setAttribute('href', `#category-${category}`);
+                icon.appendChild(use);
+                element.classList.add('category-badge', `category-${category}`);
+                if (isCardLabel) element.classList.add('category-label');
+                element.prepend(icon);
+            });
+        }
+
+        addCategoryIcons();
+        addNextUpSuggestions();
+
+        filterButtons.forEach((button) => {
+            button.addEventListener('click', () => {
+                activeFilter = button.dataset.filter;
+                filterButtons.forEach((item) => {
+                    const selected = item === button;
+                    item.classList.toggle('is-active', selected);
+                    item.setAttribute('aria-pressed', String(selected));
+                });
+                updateGuides();
+            });
+        });
+
+        sortSelect.addEventListener('change', sortGuideCards);
+
+        completionButtons.forEach((button) => {
+            const card = button.closest('.guide-card');
+            updateCompletionCard(card);
+
+            button.addEventListener('click', () => {
+                const guideId = card.dataset.guideId;
+                if (completedGuideIds.has(guideId)) {
+                    completedGuideIds.delete(guideId);
+                } else {
+                    completedGuideIds.add(guideId);
+                }
+
+                updateCompletionCard(card);
+                updateProgress();
+                saveProgress();
+            });
+        });
+
+        bookmarkButtons.forEach((button) => {
+            const card = button.closest('.guide-card');
+            updateBookmarkCard(card);
+
+            button.addEventListener('click', () => {
+                const guideId = card.dataset.guideId;
+                if (savedGuideIds.has(guideId)) {
+                    savedGuideIds.delete(guideId);
+                } else {
+                    savedGuideIds.add(guideId);
+                }
+
+                updateBookmarkCard(card);
+                updateFilterCounts();
+                saveBookmarks();
+                updateGuides();
+            });
+        });
+
+        updateFilterCounts();
+
+        updateProgress();
+
+        searchInput.addEventListener('input', updateGuides);
+        document.addEventListener('keydown', (event) => {
+            if (event.key === '/' && !['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) {
+                event.preventDefault();
+                searchInput.focus();
+            }
+            if (event.key === 'Escape' && document.activeElement === searchInput) {
+                searchInput.value = '';
+                updateGuides();
+                searchInput.blur();
+            }
+        });
+
+        document.getElementById('surprise-button').addEventListener('click', () => {
+            if (!guideCards.some((card) => !card.hidden)) {
+                searchInput.value = '';
+                filterButtons[0].click();
+            }
+            const choices = guideCards.filter((card) => !card.hidden);
+            const chosen = choices[Math.floor(Math.random() * choices.length)];
+            chosen.querySelector('details').open = true;
+            chosen.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
+
+        continueButton.addEventListener('click', () => {
+            const nextCard = guideCards.find((card) => !completedGuideIds.has(card.dataset.guideId)) || guideCards[0];
+            if (!nextCard) return;
+
+            searchInput.value = '';
+            filterButtons[0].click();
+            const details = nextCard.querySelector('details');
+            if (details) details.open = true;
+            nextCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
+    </script>
+    <script src="guide.js"></script>
+</body>
+</html>
