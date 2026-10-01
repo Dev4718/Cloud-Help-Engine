@@ -38,7 +38,7 @@ const copyExampleButton = document.getElementById('copy-example');
 const copyStatus = document.getElementById('copy-status');
 let currentReaderCard = null;
 let readerObserver = null;
-const guideDataByIdPromise = fetch('guides.json')
+const guideDataByIdPromise = fetch('/data/guides.json')
     .then((response) => {
         if (!response.ok) throw new Error('Could not load guide data');
         return response.json();
