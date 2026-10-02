@@ -1,0 +1,15 @@
+[33mcommit 40670be4641e053bdd7759c34f33534a09c5f970[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mrestructure-folders[m[33m, [m[1;31morigin/restructure-folders[m[33m)[m
+Author: Dev Kr. Rastogi <devkrrastogi@gmail.com>
+Date:   Fri Oct 2 18:14:49 2026 +0000
+
+    refactor: reorganize project structure and update assets
+
+ .gitignore          |    2 [32m+[m
+ package-lock.json   | 1219 [32m+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++[m
+ package.json        |   27 [32m++[m
+ public/chatbot.html |   14 [32m+[m[31m-[m
+ public/guide.html   |   12 [32m+[m[31m-[m
+ public/index.html   |   22 [32m+[m[31m-[m
+ public/jobs.html    |   14 [32m+[m[31m-[m
+ public/msg.html     |   14 [32m+[m[31m-[m
+ 8 files changed, 1286 insertions(+), 38 deletions(-)
